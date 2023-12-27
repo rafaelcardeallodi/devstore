@@ -1,13 +1,16 @@
 import { ReactNode } from 'react'
 
 import { Header } from '@/components/header'
+import { CartProvider } from '@/contexts/cart-context'
 
 export default function HomeLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="mx-auto grid min-h-screen w-full max-w-[1600px] grid-rows-app gap-5 p-8">
-      <Header />
+    <CartProvider>
+      <div className="mx-auto grid min-h-screen w-full max-w-[1600px] grid-rows-app gap-5 p-8">
+        <Header />
 
-      {children}
-    </div>
+        {children}
+      </div>
+    </CartProvider>
   )
 }
